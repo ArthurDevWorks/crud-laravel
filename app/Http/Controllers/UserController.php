@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\UserRequest;
+
 class UserController extends Controller
 {
     public function index()
@@ -14,5 +16,10 @@ class UserController extends Controller
     {
         //Carregar a view cadastrar
         return view('users.create');
+    }
+
+    public function store(UserRequest $request)
+    {
+        $request->validated();
     }
 }

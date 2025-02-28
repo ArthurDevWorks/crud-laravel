@@ -11,7 +11,15 @@
 
     <h2>Formulario de Cadastro</h2>
 
-    <form action="#" method="POST">
+    @if ($errors->any())
+        @foreach ($errors->all() as $error )
+            <p style="color: #f00;">
+                {{ $error }}
+            </p>
+        @endforeach    
+    @endif
+
+    <form action="{{ route('user-store') }}" method="POST">
         @csrf
         @method('POST')
 
@@ -24,7 +32,7 @@
          <label>Senha</label>
         <input type="password" name="password" placeholder="Senha"> <br><br>
 
-        <input type="submit">
+       <button type="submit">Cadastrar</button>
 
     </form>
 
