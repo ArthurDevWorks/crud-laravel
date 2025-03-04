@@ -11,5 +11,20 @@
 
     <h2> Listar Usuarios</h2>
 
+    @if (session('sucess'))
+        <p style="color: #086;">
+            {{ session('sucess') }}
+        </p>  
+    @endif
+
+    @forelse ($users as $user)
+        ID:     {{ $user->id }} <br>
+        Nome:   {{$user->name}} <br>
+        Email:  {{$user->email}} <br> <hr>
+
+    @empty
+        
+    @endforelse
+
 </body>
 </html>

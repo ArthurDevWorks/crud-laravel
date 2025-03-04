@@ -2,14 +2,17 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\User;
 use App\Http\Requests\UserRequest;
 
 class UserController extends Controller
 {
     public function index()
     {
+        $users = User::orderByDesc('id')->get();
+
         //Carregar a view index
-        return view('users.index');
+        return view('users.index', ['users' => $users]);
     }
 
     public function create()
@@ -21,5 +24,15 @@ class UserController extends Controller
     public function store(UserRequest $request)
     {
         $request->validated();
+
+        //Criação do usuario
+        User::create([
+            'name'      => $request->name,
+            'email'     => $request->email,
+            'password'  => $request->password
+        ]);
+
+        //Redirect com mensagem de sucesso
+        return redirect()->route('user.index')->with('sucess', 'Usuario cadastrado com sucesso!');
     }
 }

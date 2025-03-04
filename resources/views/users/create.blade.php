@@ -24,13 +24,13 @@
         @method('POST')
 
         <label>Nome</label>
-        <input type="text" name="name" placeholder="Nome Completo"> <br><br>
+        <input type="text" name="name" placeholder="Nome Completo" value="{{ old ('name') }}"> <br><br>
 
          <label>Email</label>
-        <input type="email" name="email" placeholder="Email"> <br><br>
+        <input type="email" name="email" placeholder="Email" value="{{ old('email') }}"> <br><br>
 
          <label>Senha</label>
-        <input type="password" name="password" placeholder="Senha"> <br><br>
+        <input type="password" name="password" placeholder="Senha" value="{{ old('password') }}"> <br><br>
 
        <button type="submit">Cadastrar</button>
 
