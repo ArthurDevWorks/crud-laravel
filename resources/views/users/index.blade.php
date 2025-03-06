@@ -25,6 +25,15 @@
         <a href="{{ route('user.show', ['user' => $user->id]) }}">Visualizar</a> <br>
         <a href="{{ route('user.edit', ['user' => $user->id]) }}">Atualizar</a> <br>
 
+        {{-- Forma errada --}}
+        {{-- <a href="{{ route('user.destroy', ['user' => $user->id]) }}">Deletar</a> <br> --}}
+
+        <form method="POST" action="{{ route('user.destroy', ['user' => $user->id]) }}">
+            @csrf
+            @method('delete')
+            <button type="submit" onclick = "return confirm('Tem certeza que deseja deletar este registro ?')"> Apagar</button>
+        </form>
+
         <hr>
 
     @empty

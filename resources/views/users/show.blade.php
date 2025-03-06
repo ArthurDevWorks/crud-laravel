@@ -8,8 +8,13 @@
 </head>
 <body>
     
-     <a href="{{ route('user.index') }}">Listar</a>
-     <a href="{{ route('user.edit', ['user'=> $user->id]) }}">Atualizar</a>
+     <a href="{{ route('user.index') }}">Listar</a> <br>
+     <a href="{{ route('user.edit', ['user'=> $user->id]) }}">Atualizar</a> <br>
+     <form method="POST" action="{{ route('user.destroy', ['user' => $user->id]) }}">
+        @csrf
+        @method('delete')
+        <button type="submit" onclick = "return confirm('Tem certeza que deseja deletar este registro ?')"> Apagar</button>
+    </form>
 
     @if (session('sucess'))
         <p style="color: #086;">
