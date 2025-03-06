@@ -8,7 +8,14 @@
 </head>
 <body>
     
-     <a href="{{ route('user.index') }}">Listagem</a>
+     <a href="{{ route('user.index') }}">Listar</a>
+     <a href="{{ route('user.edit', ['user'=> $user->id]) }}">Atualizar</a>
+
+    @if (session('sucess'))
+        <p style="color: #086;">
+            {{ session('sucess') }}
+        </p>  
+    @endif
 
     <h2>Visualizar Usuario</h2>
 

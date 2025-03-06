@@ -3,7 +3,8 @@
 namespace App\Http\Controllers;
 
 use App\Models\User;
-use App\Http\Requests\UserRequest;
+use App\Http\Requests\UserStoreRequest;
+use App\Http\Requests\UserUpdateRequest;
 
 class UserController extends Controller
 {
@@ -26,7 +27,7 @@ class UserController extends Controller
         return view('users.create');
     }
 
-    public function store(UserRequest $request)
+    public function store(UserStoreRequest $request)
     {
         $request->validated();
 
@@ -39,5 +40,24 @@ class UserController extends Controller
 
         //Redirect com mensagem de sucesso
         return redirect()->route('user.index')->with('sucess', 'Usuario cadastrado com sucesso!');
+    }
+
+    public function edit(User $user)
+    {
+        return view('users.edit', ['user' => $user]);
+    }
+
+    public function update(UserUpdateRequest $request, User $user)
+    {
+        $request->validated();
+
+        $user->update([
+            'name'      => $request->name,
+            'email'     => $request->email,
+            'password'  => $request->password,
+        ]);
+
+        //Redirect com mensagem de sucesso
+        return redirect()->route('user.show',['user' => $user->id])->with('sucess', 'Usuario atualizado com sucesso!');
     }
 }
