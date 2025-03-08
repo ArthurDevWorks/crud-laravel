@@ -1,18 +1,19 @@
 @extends('layouts.admin')
 
 @section('content')
-    <div class="card mt-5 mb-4 border-light shadow">
-        <div class="card-header d-flex justify-content-between align-items-center">
+    <div class="card mt-5 mb-4 border-dark shadow" style="background-color: #1e1e1e; color: #e0e0e0;">
+        <div class="card-header d-flex justify-content-between align-items-center border-secondary" 
+             style="background-color: #121212; color: #e0e0e0;">
             <h5 class="mb-0">Listar Usuários</h5>
-            <a href="{{ route('user.create') }}" class="btn btn-primary btn-sm">Cadastrar</a>
+            <a href="{{ route('user.create') }}" class="btn btn-outline-light btn-sm">Cadastrar</a>
         </div>
 
         <div class="card-body">
             <x-alert/>
 
             <div class="table-responsive">
-                <table class="table table-striped table-hover">
-                    <thead class="table-light">
+                <table class="table table-dark table-hover">
+                    <thead class="border-secondary">
                         <tr>
                             <th scope="col">ID</th>
                             <th scope="col">Nome</th>
@@ -27,13 +28,14 @@
                                 <td>{{ $user->name }}</td>
                                 <td>{{ $user->email }}</td>
                                 <td class="text-center">
-                                    <a href="{{ route('user.show', $user->id) }}" class="btn btn-info btn-sm">Visualizar</a>
-                                    <a href="{{ route('user.edit', $user->id) }}" class="btn btn-warning btn-sm">Editar</a>
-                                    
+                                    <a href="{{ route('user.show', $user->id) }}" class="btn btn-outline-secondary btn-sm">Visualizar</a>
+                                    <a href="{{ route('user.edit', $user->id) }}" class="btn btn-outline-light btn-sm">Editar</a>
+
                                     <form method="POST" action="{{ route('user.destroy', $user->id) }}" class="d-inline">
                                         @csrf
                                         @method('DELETE')
-                                        <button type="submit" onclick="return confirm('Tem certeza que deseja deletar este usuário?')" class="btn btn-danger btn-sm">Excluir</button>
+                                        <button type="submit" onclick="return confirm('Tem certeza que deseja deletar este usuário?')" 
+                                                class="btn btn-outline-danger btn-sm">Excluir</button>
                                     </form>
                                 </td>
                             </tr>

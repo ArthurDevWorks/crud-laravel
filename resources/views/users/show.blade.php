@@ -1,17 +1,17 @@
 @extends('layouts.admin')
 
 @section('content')
-
-    <div class="card mt-5 mb-4 border-light shadow">
-        <div class="card-header d-flex justify-content-between align-items-center">
+    <div class="card mt-5 mb-4 border-dark shadow" style="background-color: #1e1e1e; color: #e0e0e0;">
+        <div class="card-header d-flex justify-content-between align-items-center border-secondary" 
+             style="background-color: #121212; color: #e0e0e0;">
             <h5 class="mb-0">Detalhes do Usuário</h5>
             <div class="d-flex">
-                <a href="{{ route('user.index') }}" class="btn btn-secondary btn-sm me-2">Listar</a>
-                <a href="{{ route('user.edit', ['user'=> $user->id]) }}" class="btn btn-warning btn-sm me-2">Editar</a>
+                <a href="{{ route('user.index') }}" class="btn btn-outline-secondary btn-sm me-2">Listar</a>
+                <a href="{{ route('user.edit', ['user'=> $user->id]) }}" class="btn btn-outline-warning btn-sm me-2">Editar</a>
                 <form method="POST" action="{{ route('user.destroy', ['user' => $user->id]) }}">
                     @csrf
                     @method('DELETE')
-                    <button type="submit" class="btn btn-danger btn-sm" onclick="return confirm('Tem certeza que deseja deletar este registro?')">
+                    <button type="submit" class="btn btn-outline-danger btn-sm" onclick="return confirm('Tem certeza que deseja deletar este registro?')">
                         Excluir
                     </button>
                 </form>
@@ -39,5 +39,4 @@
             </dl>
         </div>
     </div>
-
 @endsection
