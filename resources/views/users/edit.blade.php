@@ -38,10 +38,19 @@
                         value="{{ old('email', $user->email) }}" required style="background-color: #2d2d2d; color: #e0e0e0; border-color: #444;">
                 </div>
 
-                <div class="mb-3">
-                    <label class="form-label fw-bold">Senha</label>
-                    <input type="password" name="password" class="form-control" placeholder="Nova Senha" 
-                        style="background-color: #2d2d2d; color: #e0e0e0; border-color: #444;">
+                 <div class="row">
+
+                    <div class="mb-3 col-6">
+                        <label for="password" class="form-label">Senha</label>
+                        <input type="password" name="password" id="password" class="form-control" placeholder="Senha" value="{{ old('password') }}" 
+                            required style="background-color: #2d2d2d; color: #e0e0e0; border-color: #444;">
+                    </div>
+
+                    <div class="mb-3 col-6">
+                        <label for="password_confirmation" class="form-label">Confirmar Senha</label>
+                        <input type="password_confirmation" name="password_confirmation" id="password_confirmation" class="form-control" placeholder="Senha" value="{{ old('password_confirmation') }}"
+                            required style="background-color: #2d2d2d; color: #e0e0e0; border-color: #444;">
+                    </div>
                 </div>
 
                 <button type="submit" class="btn btn-outline-success">Salvar</button>

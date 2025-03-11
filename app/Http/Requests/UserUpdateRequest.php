@@ -24,7 +24,7 @@ class UserUpdateRequest extends FormRequest
         return [
             'name'      => 'required',
             'email'     => 'required|email|unique:users,email',
-            'password'  => 'required|min:6'
+            'password'  => 'required|confirmed|min:6'
         ];
     }
 
@@ -37,6 +37,7 @@ class UserUpdateRequest extends FormRequest
             'email.email'       => 'Insira um email válido.',
             'email.unique'      => 'Já existe um email cadastrado com este endereço.',
             'password.required' => 'Senha obrigatória',
+            'password.confirmed'=> 'As senhas devem ser iguais.',
             'password.min'      => 'Senha com no mínimo :min caracteres',
         ];
     }
