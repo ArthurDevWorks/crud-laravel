@@ -24,7 +24,7 @@ class UserStoreRequest extends FormRequest
         return [
             'name'      => 'required',
             'email'     => 'required| email',
-            'password'  => 'required|min:6'
+            'password'  => 'required|confirmed|min:6'
         ];
     }
 
@@ -36,6 +36,7 @@ class UserStoreRequest extends FormRequest
             'email.required'    => 'Email obrigatório.',
             'email.email'       => 'Insira um email válido.',
             'password.required' => 'Senha obrigatória',
+            'password.confirmed'=> 'As senhas devem ser iguais.',
             'password.min'      => 'Senha com no mínimo :min caracteres',
         ];
     }
