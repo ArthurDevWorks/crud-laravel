@@ -1,66 +1,92 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
-
 <p align="center">
-<a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
+    <a href="https://laravel.com" target="_blank">
+        <img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo">
+    </a>
 </p>
 
-## About Laravel
+# Projeto Laravel
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+Bem-vindo ao meu projeto Laravel! Este repositório contém um sistema em desenvolvimento que será aprimorado continuamente. Atualmente, ele conta com um CRUD de usuários funcional, e a ideia é evoluir a aplicação até integrá-la com Vue.js para criar uma experiência mais dinâmica e moderna.
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+## Tecnologias Utilizadas
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+- **Laravel**: Framework PHP para desenvolvimento web robusto e escalável.
+- **MySQL**: Banco de dados relacional para armazenar as informações da aplicação.
+- **Blade**: Motor de templates do Laravel para renderização de páginas.
+- **Eloquent ORM**: Mapeamento objeto-relacional para interagir com o banco de dados.
+- **Vue.js** *(futuramente)*: Framework JavaScript para a construção de uma interface mais dinâmica.
 
-## Learning Laravel
+## Funcionalidades Atuais
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+- Cadastro, edição, listagem e exclusão de usuários (CRUD completo)
+- Validações de entrada de dados
+- Estrutura inicial pronta para futuras melhorias e integrações
 
-You may also try the [Laravel Bootcamp](https://bootcamp.laravel.com), where you will be guided through building a modern Laravel application from scratch.
+## Próximos Passos
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains thousands of video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+- Melhorar a estrutura do código e otimizar consultas ao banco de dados.
+- Implementar autenticação e autorização de usuários.
+- Criar uma API para facilitar a comunicação com o frontend.
+- Integrar Vue.js para melhorar a experiência do usuário.
 
-## Laravel Sponsors
+## Instalação e Configuração
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the [Laravel Partners program](https://partners.laravel.com).
+Para rodar o projeto localmente, siga os passos abaixo:
 
-### Premium Partners
+1.  Clone este repositório:
 
-- **[Vehikl](https://vehikl.com/)**
-- **[Tighten Co.](https://tighten.co)**
-- **[WebReinvent](https://webreinvent.com/)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel/)**
-- **[Cyber-Duck](https://cyber-duck.co.uk)**
-- **[DevSquad](https://devsquad.com/hire-laravel-developers)**
-- **[Jump24](https://jump24.co.uk)**
-- **[Redberry](https://redberry.international/laravel/)**
-- **[Active Logic](https://activelogic.com)**
-- **[byte5](https://byte5.de)**
-- **[OP.GG](https://op.gg)**
+    ```bash
+    git clone [https://github.com/seu-usuario/seu-projeto.git](https://github.com/seu-usuario/seu-projeto.git)
+    ```
 
-## Contributing
+2.  Acesse a pasta do projeto:
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+    ```bash
+    cd seu-projeto
+    ```
 
-## Code of Conduct
+3.  Copie o arquivo de ambiente e configure suas credenciais:
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
+    ```bash
+    cp .env.example .env
+    ```
 
-## Security Vulnerabilities
+4.  Instale as dependências do Laravel:
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
+    ```bash
+    composer install
+    ```
 
-## License
+5.  Gere a chave da aplicação:
 
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+    ```bash
+    php artisan key:generate
+    ```
+
+6.  Instale as dependências do frontend:
+
+    ```bash
+    npm install
+    ```
+
+7.  Compile os assets do frontend:
+
+    ```bash
+    npm run dev
+    ```
+
+8.  Configure o banco de dados no arquivo `.env` e execute as migrações:
+
+    ```bash
+    php artisan migrate
+    ```
+
+9.  Inicie o servidor local:
+
+    ```bash
+    php artisan serve
+    ```
+
+## Contribuição
+
+Este é um projeto pessoal em constante evolução. Sugestões e melhorias são sempre bem-vindas! Caso queira contribuir, abra uma issue ou envie um pull request.
