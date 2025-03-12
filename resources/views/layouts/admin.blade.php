@@ -25,7 +25,7 @@
         </ul>
 
         <div class="text-end">
-          <button type="button" class="btn btn-outline-light me-2">Login</button> 
+          <a href="{{ route('login.destroy') }}" class="btn btn-outline-light me-2">Sair</a> 
         </div>
       </div>
   </header>

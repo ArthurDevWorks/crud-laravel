@@ -2,6 +2,8 @@
 
 namespace App\Http\Requests;
 
+use auth;
+use Illuminate\Validation\Rule;
 use Illuminate\Foundation\Http\FormRequest;
 
 class UserUpdateRequest extends FormRequest
@@ -21,9 +23,10 @@ class UserUpdateRequest extends FormRequest
      */
     public function rules(): array
     {
+
         return [
             'name'      => 'required',
-            'email'     => 'required|email|unique:users,email',
+            'email'     => 'required|email|unique:users,email,'.$this->user->id,
             'password'  => 'required|confirmed|min:6'
         ];
     }
