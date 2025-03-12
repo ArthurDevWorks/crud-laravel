@@ -2,8 +2,7 @@
 
 @section('content')
     <div class="card mt-5 mb-4 border-dark shadow" style="background-color: #1e1e1e; color: #e0e0e0;">
-        <div class="card-header d-flex justify-content-between align-items-center border-secondary" 
-             style="background-color: #121212; color: #e0e0e0;">
+        <div class="card-header d-flex justify-content-between align-items-center border-secondary">
             <h5 class="mb-0">Detalhes do Usuário</h5>
             <div class="d-flex">
                 <a href="{{ route('user.index') }}" class="btn btn-outline-secondary btn-sm me-2">Listar</a>

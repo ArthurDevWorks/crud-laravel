@@ -2,8 +2,7 @@
 
 @section('content')
     <div class="card mt-5 mb-4 border-dark shadow" style="background-color: #1e1e1e; color: #e0e0e0;">
-        <div class="card-header d-flex justify-content-between align-items-center border-secondary" 
-             style="background-color: #121212; color: #e0e0e0;">
+        <div class="card-header d-flex justify-content-between align-items-center border-secondary">
             <h5 class="mb-0">Listar Usuários</h5>
             <a href="{{ route('user.create') }}" class="btn btn-outline-light btn-sm">Cadastrar</a>
         </div>
