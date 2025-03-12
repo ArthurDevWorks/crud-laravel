@@ -6,7 +6,7 @@
 
 # Projeto Laravel
 
-Bem-vindo ao meu projeto Laravel! Este repositório contém um sistema em desenvolvimento que será aprimorado continuamente. Atualmente, ele conta com um CRUD de usuários funcional, e a ideia é evoluir a aplicação até integrá-la com Vue.js para criar uma experiência mais dinâmica e moderna.
+Bem-vindo ao meu projeto Laravel! Este repositório contém um sistema que realiza um CRUD para usuarios. Este projeto ja foi concluido pois esse era o meu objetivo ao inicia-lo, a partir de agora ele servirá de base para o desenvolvimento de outros projetos que tenho em mente para desenvolver.
 
 ## Tecnologias Utilizadas
 
@@ -14,20 +14,16 @@ Bem-vindo ao meu projeto Laravel! Este repositório contém um sistema em desenv
 - **MySQL**: Banco de dados relacional para armazenar as informações da aplicação.
 - **Blade**: Motor de templates do Laravel para renderização de páginas.
 - **Eloquent ORM**: Mapeamento objeto-relacional para interagir com o banco de dados.
-- **Vue.js** *(futuramente)*: Framework JavaScript para a construção de uma interface mais dinâmica.
 
 ## Funcionalidades Atuais
 
 - Cadastro, edição, listagem e exclusão de usuários (CRUD completo)
 - Validações de entrada de dados
-- Estrutura inicial pronta para futuras melhorias e integrações
+- Login e logout
 
 ## Próximos Passos
 
-- Melhorar a estrutura do código e otimizar consultas ao banco de dados.
-- Implementar autenticação e autorização de usuários.
-- Criar uma API para facilitar a comunicação com o frontend.
-- Integrar Vue.js para melhorar a experiência do usuário.
+- A partir deste projeto iniciar novas implementações.
 
 ## Instalação e Configuração
 
