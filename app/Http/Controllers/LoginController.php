@@ -3,9 +3,10 @@
 namespace App\Http\Controllers;
 
 use App\Models\User;
-use Illuminate\Http\Request;
 use App\Http\Requests\LoginRequest;
+use App\Http\Requests\UserStoreRequest;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Validation\Rules\Email;
 
 class loginController extends Controller
 {
@@ -44,5 +45,19 @@ class loginController extends Controller
     public function create()
     {
         return view('login.create');
+    }
+
+    public function store(UserStoreRequest $request)
+    {
+        $request->validated();
+
+        User::create([
+            'name'      => $request->name,
+            'email'     => $request->email,
+            'password'  => $request->password,
+        ]);
+
+        //Redirect com mensagem de sucesso
+        return redirect()->route('login')->with('sucess', 'Usuario cadastrado com sucesso!');
     }
 }

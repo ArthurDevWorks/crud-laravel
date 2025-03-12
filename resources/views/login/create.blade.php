@@ -1,17 +1,36 @@
-@extends('layouts.admin')
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
 
-@section('content')
+  @vite(['resources/sass/app.scss', 'resources/js/app.js'])
+
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+
+  <title>ArthurDevWorks</title>
+</head>
+<body>
+
+<header class="p-3 text-bg-dark">
+    <div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
+        <div class="text-end">
+            <a href="{{ route('login') }}" class="btn btn-outline-light me-2">Login</a> 
+        </div>
+    </div>
+</header>
+
     <div class="card mt-5 mb-4 border-dark shadow" style="background-color: #1e1e1e; color: #e0e0e0;">
         <div class="card-header d-flex justify-content-between align-items-center border-secondary" 
              style="background-color: #121212; color: #e0e0e0;">
             <h5 class="mb-0">Cadastrar Usuário</h5>
-            <a href="{{ route('user.index') }}" class="btn btn-outline-light btn-sm">Listar</a>
         </div>
         
         <div class="card-body">
             <x-alert/>
             
-            <form action="{{ route('user.store') }}" method="POST">
+            <form action="{{ route('login.store') }}" method="POST">
                 @csrf
                 @method('POST')
                 
@@ -57,4 +76,5 @@
             </form>
         </div>
     </div>
-@endsection
+    </body>
+</html>

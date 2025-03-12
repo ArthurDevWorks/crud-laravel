@@ -7,7 +7,8 @@ use App\Http\Controllers\LoginController;
 Route::get('/', [LoginController::class, 'index'])->name('login');
 Route::post('/login', [LoginController::class, 'loginProcess'])->name('login.process');
 Route::get('/logout', [LoginController::class, 'destroy'])->name('login.destroy');
-Route::get('/create-user-login', [LoginController::class, 'create'])->name('login.create-user');
+Route::get('/create-user-login', [LoginController::class, 'create'])->name('login.create');
+Route::post('/store-user-login', [LoginController::class, 'store'])->name('login.store');
 
 Route::group(['middleware' => 'auth'], function(){
   Route::get('/index-user', [UserController::class, 'index'])->name('user.index');

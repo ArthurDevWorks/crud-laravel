@@ -33,7 +33,7 @@
 
                 <!-- Link para "Esqueci a senha" -->
                 <div class="text-center">
-                    <a href="#" class="text-decoration-none">
+                    <a href=" {{ route('login.create') }} " class="text-decoration-none">
                         Cadastrar
                     </a>
                 </div>
