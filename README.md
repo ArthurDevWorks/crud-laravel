@@ -4,7 +4,7 @@
     </a>
 </p>
 
-# Projeto Laravel
+# CRUD LARAVEL
 
 Bem-vindo ao meu projeto Laravel! Este repositório contém um sistema que realiza um CRUD para usuarios. Este projeto ja foi concluido pois esse era o meu objetivo ao inicia-lo, a partir de agora ele servirá de base para o desenvolvimento de outros projetos que tenho em mente para desenvolver.
 
